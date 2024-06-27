@@ -1,0 +1,45 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.example",
+    "module": "feature-apollo",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apolloServiceProducer",
+      "attributes": {
+        "com.apollographql.service": "service",
+        "org.gradle.usage": "apollo-metadata"
+      },
+      "dependencies": [
+        {
+          "group": "com.example",
+          "module": "schema-apollo",
+          "version": {
+            "requires": "0.0.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "feature-apollo-0.0.1-service.json",
+          "url": "feature-apollo-0.0.1-service.json",
+          "size": 752,
+          "sha512": "8264378aca43d31414716527839812741829c07264b3f47979b952e7bdfa6cbf8d8e2114efd27f27b4abc5de76573356935a5bc585cf839a6f697b520a297eb6",
+          "sha256": "3f749fc5aea5282614d201326524e3e6ac99d357a4db48f274e76d929cd01877",
+          "sha1": "cd961901f9c9c77bf94602096e224bbc18191df3",
+          "md5": "499f35bd2de0a87f7f4cf240c49aec8d"
+        }
+      ]
+    }
+  ]
+}
