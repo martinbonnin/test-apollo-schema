@@ -8,7 +8,7 @@ dependencies {
   implementation("com.apollographql.apollo3:apollo-runtime")
   implementation(project(":common-models"))
   apolloMetadata(project(":common-models"))
-  apolloSchema("com.example:schema-apollo-schema:0.0.1")
+  apolloSchema(project(":common-models"))
 }
 
 group = "com.example"
