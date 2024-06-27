@@ -4,6 +4,7 @@
 !**/.idea/runConfigurations
 !**/.idea/scopes
 .gradle
+my-repository
 build
 .terraform
 .kotlin
