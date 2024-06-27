@@ -1,0 +1,11 @@
+query App1FeatureB {
+    shared {
+        field
+    }
+    app1 {
+        field
+    }
+    app1FeatureB {
+        field
+    }
+}

@@ -1,13 +1,16 @@
 plugins {
-  id("org.jetbrains.kotlin.jvm").version("2.0.0")
-  id("com.apollographql.apollo3").version("3.8.4")
+  id("org.jetbrains.kotlin.jvm")
+  id("com.apollographql.apollo3.external")
   id("maven-publish")
 }
 
 dependencies {
   implementation("com.apollographql.apollo3:apollo-runtime")
-  implementation("com.example:schema:0.0.1")
+  api("com.example:schema:0.0.1")
+  apolloSchema("com.example:schema-apollo-schema:0.0.1")
   apolloMetadata("com.example:schema-apollo:0.0.1")
+  apolloUsedCoordinates(project(":featureA"))
+  apolloUsedCoordinates(project(":featureB"))
 }
 
 group = "com.example"
@@ -25,5 +28,6 @@ publishing {
 apollo {
   service("service") {
     packageName.set("com.example.feature")
+    generateApolloMetadata.set(true)
   }
 }

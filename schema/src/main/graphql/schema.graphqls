@@ -1,3 +1,23 @@
 type Query {
     foo: Int
+    shared: Shared!
+    app1: App1!
+    app1FeatureA: App1FeatureA
+    app1FeatureB: App1FeatureB
+}
+
+type Shared {
+    field: Int
+}
+
+type App1 {
+    field: Int
+}
+
+type App1FeatureA {
+    field: Int
+}
+
+type App1FeatureB {
+    field: Int
 }

@@ -7,3 +7,5 @@ pluginManagement {
     }
   }
 }
+
+include("featureA", "featureB", "common-models")

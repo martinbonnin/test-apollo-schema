@@ -29,6 +29,22 @@ apollo {
   service("service") {
     packageName.set("com.example.schema")
     generateApolloMetadata.set(true)
-    alwaysGenerateTypesMatching.set(listOf("Query"))
+    alwaysGenerateTypesMatching.set(listOf("Query", "Shared"))
   }
+}
+
+abstract class ComponentFactoryHolder {
+  @get:Inject
+  abstract val softwareComponentFactory: SoftwareComponentFactory
+}
+
+val holder = project.objects.newInstance(ComponentFactoryHolder::class.java)
+
+val adhocComponentWithVariants = holder.softwareComponentFactory.adhoc("apollo-schema")
+
+adhocComponentWithVariants.addVariantsFromConfiguration(configurations.getByName("apolloServiceSchemaProducer")) {}
+
+publishing.publications.create("apollo-schema", MavenPublication::class.java) {
+  from(adhocComponentWithVariants)
+  artifactId = "${project.name}-apollo-schema"
 }
