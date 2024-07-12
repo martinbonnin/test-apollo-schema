@@ -1,0 +1,13 @@
+name: pr
+
+on: push
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: gradleup/librarian/setup-librarian@main
+      - run: |
+          echo "hello"
+          librarian --version

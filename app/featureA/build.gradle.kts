@@ -9,6 +9,9 @@ dependencies {
   implementation(project(":common-models"))
   apolloMetadata(project(":common-models"))
   apolloSchema(project(":common-models"))
+  testImplementation(kotlin("test"))
+  testImplementation(kotlin("reflect"))
+  testImplementation("org.jetbrains.kotlin:kotlin-metadata-jvm")
 }
 
 group = "com.example"
